@@ -451,3 +451,9 @@
 2024/09/30 10:51:31 [notice] 1#1: start worker process 33
 2024/09/30 10:51:31 [notice] 1#1: start worker process 34
 2024/09/30 10:51:31 [notice] 1#1: start worker process 35
+2024/09/30 10:54:26 [error] 28#28: *1 auth request unexpected status: 400 while sending to client, client: 172.17.0.1, server: 192.168.100.102, request: "GET /api/?token=123 HTTP/1.1", host: "localhost"
+2024/09/30 10:54:26 [error] 28#28: *1 open() "/etc/nginx/html/50x.html" failed (2: No such file or directory), client: 172.17.0.1, server: 192.168.100.102, request: "GET /api/?token=123 HTTP/1.1", host: "localhost"
+2024/09/30 10:55:23 [error] 31#31: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.17.0.1, server: 192.168.100.102, request: "GET /api/?token=success HTTP/1.1", subrequest: "/auth", upstream: "http://192.168.100.102:8080/verify?token=success", host: "localhost"
+2024/09/30 10:55:23 [error] 31#31: *7 open() "/etc/nginx/html/50x.html" failed (2: No such file or directory), client: 172.17.0.1, server: 192.168.100.102, request: "GET /api/?token=success HTTP/1.1", subrequest: "/50x.html", upstream: "http://192.168.100.102:8080/verify?token=success", host: "localhost"
+2024/09/30 10:55:23 [error] 31#31: *7 auth request unexpected status: 404, client: 172.17.0.1, server: 192.168.100.102, request: "GET /api/?token=success HTTP/1.1", host: "localhost"
+2024/09/30 10:55:23 [error] 31#31: *7 open() "/etc/nginx/html/50x.html" failed (2: No such file or directory), client: 172.17.0.1, server: 192.168.100.102, request: "GET /api/?token=success HTTP/1.1", host: "localhost"
